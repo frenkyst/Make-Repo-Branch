@@ -41,11 +41,107 @@ Konfigurasi user, email, dan SSH Key
 7. Beri nama dan masukkan public key yang dicopy sebelumya ke kotak Key. Jika sudah klik __Add SSH Key__
 
 ![image](https://user-images.githubusercontent.com/40049149/186732608-76da5e05-74a8-4b87-8562-beebd1a8447b.png)
+
+8. Jika Key sudah di tambahkan makan tampilannya seperti ini
+
 ![image](https://user-images.githubusercontent.com/40049149/186733186-e5587ea2-952a-4372-baca-74f5592abac8.png)
 
-8. Cek __koneksi__ ke Github dengan command berikut
+9. Cek __koneksi__ ke Github dengan command berikut
 
         ssh -T git@github.com
         
 ![image](https://user-images.githubusercontent.com/40049149/186733272-ffc2233e-b9d2-4b18-9597-8c4faa65e111.png)
 
+
+
+### Membuat dan Mengisi Repository+Branch dengan Aplikasi
+
+1. Masuk ke folder yang akan di upload ke github
+
+![image](https://user-images.githubusercontent.com/40049149/186735356-a6b60977-40e0-429e-8f8f-515094645fd6.png)
+
+2. Ketikkan command berikut. Command ini akan membuat folder .git di folder aplikasi
+
+        git init
+
+
+
+3. Sebelum upload, kita harus memilih file yang ingin kita upload. Kita akan membuat file .gitignore. File ini berisi file atau direktori yang tidak akan di upload. Contoh, kita tidak akan mengupload direktori node_modules
+
+        Touch .gitignore
+
+        Echo "node_modules" > .gitignore
+
+
+
+4. Setelah itu, kita akan memilih file yang akan kita upload. Ini akan membuat file memasuki fase staged dimana file siap untuk di commit(ditulis ke repository)
+
+        git add <file>
+
+
+
+Jalankan git status untuk mengecek apakah file sudah ditambahkan (ditandai dengan warna hijau)
+
+5. Buka github, lalu buat repository baru dengan memilih New repository (Jika sudah membuat repo, skip ke step 7)
+
+
+
+6. Isikan nama repo lalu klik create repository dibawah
+
+
+
+7. Pilih SSH, lalu copy baris berikut
+
+
+
+Jika sudah membuat repository, klik code lalu pilih berikut
+
+
+
+8. Buka terminal kembali, lalu isikan kode berikut
+
+        git remote add <remote-name> <url>
+
+
+
+Cek dengan command git remote -v untuk melihat daftar remote yang sudah terdaftar didalam repository lokal
+
+9. Lakukan commit untuk menulis file kedalam repository lokal dengan command berikut
+
+        git commit -m "my first commit"
+
+
+
+10. Lakukan push untuk mengirim file yang berada di repository lokal ke repository github.
+
+        git push <remote-name> <branch-name>
+
+
+
+Isikan <remote-name> dengan nama remote yang dibuat sebelumnya. <branch-name> secara default jika tidak disebutkan saat git init, akan menggunakan master
+
+11. Jika kita cek di github, maka file yang kita buat sudah muncul
+
+
+
+12. Buat branch baru dengan command berikut
+
+        Git branch <branch-name>
+
+
+
+Lihat daftar branch yang sudah ada dengan command git branch -a
+
+13. Saat ini kita masih di branch master. Untuk berpindah ke branch lain, gunakan command berikut
+
+        git checkout <branch-name>
+
+
+
+14. Lalu kita akan push branch tersebut ke github. Gunakan command berikut
+
+        Git push <remote-name> <branch-name>
+
+
+
+15. Kita cek di github. Akan muncul branch baru beserta isinya
