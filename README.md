@@ -76,77 +76,79 @@ Konfigurasi user, email, dan SSH Key
 ![image](https://user-images.githubusercontent.com/40049149/186737640-8326ecbf-c9df-4d4e-955d-4aa397ac9fe7.png)
 
 
-4. Setelah itu, kita akan memilih file yang akan kita upload. Ini akan membuat file memasuki fase staged dimana file siap untuk di commit(ditulis ke repository)
+4. Setelah itu, kita akan memilih __file__ yang akan kita upload. Ini akan membuat file memasuki fase staged dimana file siap untuk di commit(ditulis ke repository)
 
         git add .
         git status
 
+![image](https://user-images.githubusercontent.com/40049149/186738923-7f138510-5e06-4f45-8e6c-7cf52199e2e8.png)
+
+Jalankan __git status__ untuk mengecek apakah file sudah ditambahkan (ditandai dengan warna hijau)
+
+5. Buka github, lalu buat repository baru dengan klik tanda + di pojok kanan atas memilih __New repository__ (Jika sudah membuat repo, skip ke step 7)
+
 ![image](https://user-images.githubusercontent.com/40049149/186738681-2661193c-769e-4892-95d3-cc98680f0b02.png)
 
+6. Isikan nama repo lalu klik __create repository__ dibawah
 
-Jalankan git status untuk mengecek apakah file sudah ditambahkan (ditandai dengan warna hijau)
-
-5. Buka github, lalu buat repository baru dengan klik tanda + di pojok kanan atas memilih New repository (Jika sudah membuat repo, skip ke step 7)
-
-![Uploading image.png…]()
-
-
-6. Isikan nama repo lalu klik create repository dibawah
-
-
+![image](https://user-images.githubusercontent.com/40049149/186739134-ccccc37f-745a-4fbd-991c-394a5c024be4.png)
 
 7. Pilih SSH, lalu copy baris berikut
 
-
+![image](https://user-images.githubusercontent.com/40049149/186739574-7c007da0-d94c-4c58-af61-2c06824f7ccc.png)
 
 Jika sudah membuat repository, klik code lalu pilih berikut
 
-
+![image](https://user-images.githubusercontent.com/40049149/186739779-fa76b410-b7e4-4178-a4cd-c764de1bab80.png)
 
 8. Buka terminal kembali, lalu isikan kode berikut
 
-        git remote add <remote-name> <url>
+        git remote add origin git@github.com:frenkyst/deploy-nodejs-ubuntu.git
+        git remote -v
 
+![image](https://user-images.githubusercontent.com/40049149/186740229-c31853e5-cbf6-4023-9fbf-bb646d62b1af.png)
 
-
-Cek dengan command git remote -v untuk melihat daftar remote yang sudah terdaftar didalam repository lokal
+Cek dengan command __git remote -v__ untuk melihat daftar remote yang sudah terdaftar didalam repository lokal
 
 9. Lakukan commit untuk menulis file kedalam repository lokal dengan command berikut
 
-        git commit -m "my first commit"
+        git commit -m "penting komitmen"
 
-
+![image](https://user-images.githubusercontent.com/40049149/186740547-69e7e808-adbb-44ba-a818-40101c921645.png)
 
 10. Lakukan push untuk mengirim file yang berada di repository lokal ke repository github.
 
-        git push <remote-name> <branch-name>
+        git push origin master
 
-
+![image](https://user-images.githubusercontent.com/40049149/186740875-a24755b9-8597-4ca1-9969-9b7f2323bec5.png)
 
 Isikan <remote-name> dengan nama remote yang dibuat sebelumnya. <branch-name> secara default jika tidak disebutkan saat git init, akan menggunakan master
 
 11. Jika kita cek di github, maka file yang kita buat sudah muncul
 
-
+![image](https://user-images.githubusercontent.com/40049149/186741090-09bc0988-4a4b-42e1-9d6d-e7c3fd336a5d.png)
 
 12. Buat branch baru dengan command berikut
 
-        Git branch <branch-name>
+        git branch develop
 
-
+![image](https://user-images.githubusercontent.com/40049149/186741797-a0159c68-d10e-47e9-981a-3ca096e7ee41.png)
 
 Lihat daftar branch yang sudah ada dengan command git branch -a
 
 13. Saat ini kita masih di branch master. Untuk berpindah ke branch lain, gunakan command berikut
 
-        git checkout <branch-name>
+        git checkout develop
 
-
+![image](https://user-images.githubusercontent.com/40049149/186741876-7bf270ef-7823-4ac9-9ef9-53274eddf543.png)
 
 14. Lalu kita akan push branch tersebut ke github. Gunakan command berikut
 
-        Git push <remote-name> <branch-name>
+        git push origin develop
 
-
+![image](https://user-images.githubusercontent.com/40049149/186742423-bc2ec361-9802-409b-b1a0-805ffb7d2924.png)
 
 15. Kita cek di github. Akan muncul branch baru beserta isinya
+        
+![image](https://user-images.githubusercontent.com/40049149/186742485-df1af723-a155-4fa3-affa-0962ad29a7b7.png)
+
