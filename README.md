@@ -62,28 +62,33 @@ Konfigurasi user, email, dan SSH Key
 
 2. Ketikkan command berikut. Command ini akan membuat folder .git di folder aplikasi
 
+        touch file1 file2 file3
         git init
 
-
+![image](https://user-images.githubusercontent.com/40049149/186737271-80c2d0b6-0cc6-4cd7-ac24-c211a43d4b01.png)
 
 3. Sebelum upload, kita harus memilih file yang ingin kita upload. Kita akan membuat file .gitignore. File ini berisi file atau direktori yang tidak akan di upload. Contoh, kita tidak akan mengupload direktori node_modules
 
-        Touch .gitignore
+        touch .gitignore fileignore
+        echo "fileignore" > .gitignore
+        cat .gitignore
 
-        Echo "node_modules" > .gitignore
-
+![image](https://user-images.githubusercontent.com/40049149/186737640-8326ecbf-c9df-4d4e-955d-4aa397ac9fe7.png)
 
 
 4. Setelah itu, kita akan memilih file yang akan kita upload. Ini akan membuat file memasuki fase staged dimana file siap untuk di commit(ditulis ke repository)
 
-        git add <file>
+        git add .
+        git status
 
+![image](https://user-images.githubusercontent.com/40049149/186738681-2661193c-769e-4892-95d3-cc98680f0b02.png)
 
 
 Jalankan git status untuk mengecek apakah file sudah ditambahkan (ditandai dengan warna hijau)
 
-5. Buka github, lalu buat repository baru dengan memilih New repository (Jika sudah membuat repo, skip ke step 7)
+5. Buka github, lalu buat repository baru dengan klik tanda + di pojok kanan atas memilih New repository (Jika sudah membuat repo, skip ke step 7)
 
+![Uploading image.png…]()
 
 
 6. Isikan nama repo lalu klik create repository dibawah
